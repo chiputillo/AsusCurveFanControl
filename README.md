@@ -7,7 +7,7 @@ Go to [releases](../../releases)
 
 GUI: `ChipUtillo.exe`  
 
-![AsusFanControlGUI](https://raw.githubusercontent.com/okarpov/ChipUtillo/master/screen.jpg)
+![AsusFanControlGUI](https://raw.githubusercontent.com/chiputillo/AsusCurveFanControl/main/screen.jpg)
 
 ### Why need it?
 If your laptop does not support the [Fan Profile](https://github.com/Karmel0x/AsusFanControl/assets/25367564/924d990a-bf20-4b8d-bf9d-56c460174d99) option or you need more flaxible Fan configuration/control and other 3rd parties apps to control fans do not work for you.
