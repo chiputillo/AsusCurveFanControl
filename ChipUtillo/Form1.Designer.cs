@@ -34,6 +34,11 @@
             btnApplyCurve = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             lblCurrentMode = new Label();
+            notifyIcon1 = new NotifyIcon(components);
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            openToolStripMenuItem = new ToolStripMenuItem();
+            exitToolStripMenuItem = new ToolStripMenuItem();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // fanCurve
@@ -59,7 +64,6 @@
             // timer1
             // 
             timer1.Enabled = true;
-            timer1.Interval = 2000;
             timer1.Tick += timer1_Tick;
             // 
             // lblCurrentMode
@@ -71,6 +75,34 @@
             lblCurrentMode.TabIndex = 4;
             lblCurrentMode.Text = "Reading HW data ...";
             // 
+            // notifyIcon1
+            // 
+            notifyIcon1.ContextMenuStrip = contextMenuStrip1;
+            notifyIcon1.Text = "ChipUtillo";
+            notifyIcon1.Visible = true;
+            notifyIcon1.DoubleClick += notifyIcon1_DoubleClick;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { openToolStripMenuItem, exitToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(116, 48);
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.Image = Properties.Resources.favicon;
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(115, 22);
+            openToolStripMenuItem.Text = "Open ...";
+            openToolStripMenuItem.Click += openToolStripMenuItem_Click;
+            // 
+            // exitToolStripMenuItem
+            // 
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new Size(115, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -79,10 +111,15 @@
             Controls.Add(lblCurrentMode);
             Controls.Add(btnApplyCurve);
             Controls.Add(fanCurve);
+            DoubleBuffered = true;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Asus Fans Curve Control - ChipUtillo";
+            FormClosing += Form1_FormClosing;
             FormClosed += Form1_FormClosed;
+            Resize += Form1_Resize;
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -92,5 +129,9 @@
         private Button btnApplyCurve;
         private System.Windows.Forms.Timer timer1;
         private Label lblCurrentMode;
+        private NotifyIcon notifyIcon1;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
     }
 }
