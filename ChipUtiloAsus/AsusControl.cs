@@ -9,6 +9,10 @@ namespace AsusFanControl
 {
     public class AsusControl:IDisposable
     {
+        /*
+         * this class was forked from: https://github.com/Karmel0x/AsusFanControl
+        */
+
         bool _disposed = false;
         public AsusControl()
         {
