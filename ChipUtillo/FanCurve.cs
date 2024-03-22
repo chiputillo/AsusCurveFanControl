@@ -20,7 +20,7 @@ namespace ChipUtillo
         const float pointSize = 8f;
         const float dpiCoeff = -0.1f;
 
-        PointF[] percentPoints = new PointF[ptNum];
+        PointF[] percentPoints = null;
         PointF[] curvePoints = new PointF[ptNum];
 
         int curvePointIndx = 0;
@@ -35,15 +35,8 @@ namespace ChipUtillo
             this.Disposed += new EventHandler(OnDispose);
             gridBrush = new HatchBrush(HatchStyle.Percent50, Color.White);
             gridPen = new Pen(gridBrush);
-            for (int i = 0; i < ptNum; i++)
-            {
-                percentPoints[i] = new PointF()
-                {
-                    X = 100.0f / ptNum * i + 10,
-                    Y = 100.0f / ptNum * i + 10
-                };
-            }
-            percentPoints[percentPoints.Length - 1].X = percentPoints[percentPoints.Length - 1].Y = 100;
+
+            percentPoints = System.Text.Json.JsonSerializer.Deserialize<PointF[]>(@"[{""X"":87,""Y"":100},{""X"":84,""Y"":85},{""X"":80,""Y"":64},{""X"":74,""Y"":50},{""X"":65,""Y"":43},{""X"":55,""Y"":40},{""X"":45,""Y"":38},{""X"":20,""Y"":35}]");
 
             InitializeComponent();
             this.WorkingWidth = this.Width - (nonWorkingAreaSize * 2);
