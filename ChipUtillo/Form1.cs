@@ -83,6 +83,7 @@ namespace ChipUtillo
 
                 initialized = true;
             });
+
             //int fanSupport = FanModeManager.GetFanSupport();
 
             //lblCurrentMode.Text = string.Empty;
@@ -114,67 +115,6 @@ namespace ChipUtillo
 
         }
 
-        //    protected override void OnPaint(PaintEventArgs e)
-        //    {
-        //        base.OnPaint(e);
-
-        //        Graphics g = e.Graphics;
-        //        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
-        //        int centerX = ClientSize.Width / 5-20;
-        //        int centerY = ClientSize.Height / 5+200;
-
-        //        int radius = Math.Min(ClientSize.Width, ClientSize.Height) / 6;
-
-        //        // Draw fan blades
-        //        for (int i = 0; i < 4; i++)
-        //        {
-        //            float startAngle = (i * (360f / 4))+DateTime.UtcNow.Second*(360.0f/15.0f); // Start angle of each fan blade
-        //            float endAngle = startAngle + 60f; // End angle of each fan blade
-
-        //            // Define points of the fan blade
-        //            double outerRadius = radius * 0.9; // Adjust slightly smaller than the fan's radius 
-
-        //            Point p1 = new Point(centerX, centerY);
-        //            Point p2 = new Point(
-        //                        (int)(centerX + radius * Math.Cos(startAngle * Math.PI / 180)),
-        //                        (int)(centerY + radius * Math.Sin(startAngle * Math.PI / 180)));
-
-        //            // Control points for rounding - adjust offset as needed
-        //            Point cp1 = new Point(
-        //                        (int)(centerX + radius * 0.8 * Math.Cos((startAngle + 10) * Math.PI / 180)),
-        //                        (int)(centerY + radius * 0.8 * Math.Sin((startAngle + 10) * Math.PI / 180)));
-        //            Point cp2 = new Point(
-        //        (int)(centerX + radius * 0.85 * Math.Cos((endAngle - 5) * Math.PI / 180)), // Adjust slightly
-        //        (int)(centerY + radius * 0.85 * Math.Sin((endAngle - 5) * Math.PI / 180))); // Adjust slightly
-
-        //            // More control points for a smoother curve (adjust as needed)
-        //            Point midPoint = new Point(
-        //                            (int)(centerX + radius * 0.7 * Math.Cos(((startAngle + endAngle) / 2) * Math.PI / 180)),
-        //                            (int)(centerY + radius * 0.7 * Math.Sin(((startAngle + endAngle) / 2) * Math.PI / 180)));
-        //            Point cp3 = new Point(
-        //(int)(centerX + radius * 0.8 * Math.Cos(((endAngle - 10) * Math.PI / 180))), // Adjust slightly inward
-        //(int)(centerY + radius * 0.8 * Math.Sin(((endAngle - 10) * Math.PI / 180))));
-        //            Point cp4 = new Point(
-        //                (int)(centerX + radius * 0.9 * Math.Cos(endAngle * Math.PI / 180)), // Adjust slightly outward
-        //                (int)(centerY + radius * 0.9 * Math.Sin(endAngle * Math.PI / 180)));
-
-        //            // Create a path for filling 
-        //            GraphicsPath path = new GraphicsPath();
-        //            path.AddBezier(p1, cp1, cp2, p2);
-        //            path.AddBezier(cp3,p2, p2, p1);  // Adjusted control points for smoother tip, possibly a different order
-        //            path.CloseFigure();
-
-        //            // Fill the blade shape
-        //            g.FillPath(Brushes.Gray, path);
-        //        }
-
-        //        // Draw the central circle
-        //        int centralCircleRadius = radius / 5;
-        //        Rectangle centralCircleRect = new Rectangle(centerX - centralCircleRadius, centerY - centralCircleRadius,
-        //                                                     centralCircleRadius * 2, centralCircleRadius * 2);
-        //        g.FillEllipse(Brushes.Gray, centralCircleRect);
-        //    }
         private void UpdateIcon()
         {
 
